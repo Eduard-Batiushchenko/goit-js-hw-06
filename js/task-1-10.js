@@ -17,7 +17,7 @@ import users from './user.js';
 // TASK-3
 
 // const getUsersWithGender = (users, gender) =>
-//   users.filter(user => user.gender === gender);
+//   users.filter(user => user.gender === gender).map(user => user.name);
 
 // console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
@@ -88,20 +88,20 @@ import users from './user.js';
 
 // TASK-10
 
-const getSortedUniqueSkills = users =>
-  users
-    .reduce((allSkills, user) => {
-      allSkills.push(...user.skills);
-      return allSkills;
-    }, [])
-    .reduce((filterSkills, allSkills) => {
-      if (!filterSkills.includes(allSkills)) {
-        filterSkills.push(allSkills);
-        return filterSkills;
-      }
-      return filterSkills;
-    }, [])
-    .sort();
+// const getSortedUniqueSkills = users =>
+//   users
+//     .reduce((allSkills, user) => {
+//       allSkills.push(...user.skills);
+//       return allSkills;
+//     }, [])
+//     .reduce((filterSkills, allSkills) => {
+//       if (!filterSkills.includes(allSkills)) {
+//         filterSkills.push(allSkills);
+//         return filterSkills;
+//       }
+//       return filterSkills;
+//     }, [])
+//     .sort();
 
-console.log(getSortedUniqueSkills(users));
-// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+// console.log(getSortedUniqueSkills(users));
+// // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
