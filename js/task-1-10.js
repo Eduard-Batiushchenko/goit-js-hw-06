@@ -88,20 +88,20 @@ import users from './user.js';
 
 // TASK-10
 
-// const getSortedUniqueSkills = users =>
-//   users
-//     .reduce((acc, user) => {
-//       acc.push(...user.skills);
-//       return acc;
-//     }, [])
-//     .reduce((result, acc) => {
-//       if (!result.includes(acc)) {
-//         result.push(acc);
-//         return result;
-//       }
-//       return result;
-//     }, [])
-//     .sort();
+const getSortedUniqueSkills = users =>
+  users
+    .reduce((allSkills, user) => {
+      allSkills.push(...user.skills);
+      return allSkills;
+    }, [])
+    .reduce((filterSkills, allSkills) => {
+      if (!filterSkills.includes(allSkills)) {
+        filterSkills.push(allSkills);
+        return filterSkills;
+      }
+      return filterSkills;
+    }, [])
+    .sort();
 
-// console.log(getSortedUniqueSkills(users));
-// // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+console.log(getSortedUniqueSkills(users));
+// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
